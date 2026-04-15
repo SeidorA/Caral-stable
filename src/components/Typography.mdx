@@ -1,0 +1,71 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Design System/Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Poppins", sans-serif',
+  },
+  weight: {
+    regular: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
+    extrabold: '800',
+  },
+  size: {
+    title: 60,
+    h1: 48,
+    h2: 30,
+    h3: 24,
+    h4: 20,
+    p: 16,
+    small: 14,
+    subtle: 12,
+  },
+};
+
+export const SampleText = 'Caral Design System- Seidor';
+
+# Typography
+
+La tipografía de **Caral** prioriza la jerarquía visual y la legibilidad. Utilizamos **Poppins** en todo el espectro del sistema.
+
+## Headings (Display)
+Se utilizan para títulos de gran impacto y jerarquías superiores. El peso predeterminado para titulares es **Bold (700)** o **Extrabold (800)**.
+
+<Typeset
+  fontSizes={[
+    typography.size.title,
+    typography.size.h1,
+    typography.size.h2,
+    typography.size.h3,
+    typography.size.h4,
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+## Body & UI Text
+Utilizado para el contenido principal, estados de componentes y metadatos. El peso estándar es **Regular (400)**.
+
+<Typeset
+  fontSizes={[
+    typography.size.p,
+    typography.size.small,
+    typography.size.subtle,
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText="Este es un ejemplo de cómo se visualiza el texto de cuerpo en el sistema Caral."
+  fontFamily={typography.type.primary}
+/>
+
+## Pesos de Fuente
+Poppins soporta múltiples pesos que utilizamos para diferenciar la importancia de la información.
+
+- **Regular (400)**: Texto de cuerpo y párrafos.
+- **Medium (500)**: Etiquetas de inputs y metadatos.
+- **SemiBold (600)**: Títulos secundarios y botones.
+- **Bold (700)**: Títulos principales.
+- **ExtraBold (800)**: Títulos de gran tamaño (Display).

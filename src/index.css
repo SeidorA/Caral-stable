@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .light {
+    --color-seidor-main: #07153a;
+    --color-seidor-hard: #263c7a;
+    --color-seidor-light: #66b6ff;
+    --color-seidor-main-text: #fafafa;
+    
+    --color-neutral-100: #fafafa;
+    --color-neutral-400: #f1f5f9;
+    --color-neutral-500: #e2e8f0;
+    --color-neutral-800: #94a3b8;
+    --color-neutral-900: #242528;
+    --color-neutral-body: #f1f5f9;
+
+    --color-info-main: #0191ff;
+    --color-info-hard: #006abb;
+    --color-info-light: #99d3ff;
+    --color-info-light-rgb: 153,211,255;
+
+    --color-success-main: #44ca9f;
+    --color-success-hard: #13644a;
+    --color-success-light: #daf4ec;
+    --color-success-light-rgb: 218,244,236;
+
+    --color-danger-main: #ef4444;
+    --color-danger-hard: #560505;
+    --color-danger-light: #ffeded;
+    --color-danger-light-rgb: 255,237,237;
+
+    --color-warning-main: #f88a00;
+    --color-warning-hard: #b46400;
+    --color-warning-light: #fff3e5;
+    --color-warning-light-rgb: 255,243,229;
+
+    --color-indido-main: #3c096c;
+    --color-indido-hard: #240046;
+    --color-indido-light: #f2dcff;
+
+    --color-sakura-main: #ff2e8c;
+    --color-sakura-hard: #b1004f;
+    --color-sakura-light: #ffd0e5;
+
+    --color-container: #F1F5F9;
+    --color-full: #E2E8F0;
+  }
+
+  .dark {
+    --color-seidor-main: #263c7a;
+    --color-seidor-hard: #263c7a;
+    --color-seidor-light: #66b6ff;
+    --color-seidor-main-text: #fafafa;
+    
+    --color-neutral-100: #fafafa;
+    --color-neutral-400: #21252b;
+    --color-neutral-500: #555c67;
+    --color-neutral-800: #94a3b8;
+    --color-neutral-900: #f1f5f9;
+    --color-neutral-body: #21252b;
+
+
+    --color-container: #202938;
+    --color-full: #0F172B;
+  }
+
+  body {
+    background-color: var(--color-neutral-body);
+    color: var(--color-neutral-900);
+    @apply font-poppins;
+  }
+
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-h3; }
+  h4 { @apply text-h4; }
+  h5 { @apply text-h5; }
+  h6 { @apply text-h6; }
+  p { @apply text-p; }
+  label { @apply text-label; }
+  small { @apply text-small; }
+  strong { @apply text-strong; }
+
+  :root {
+    /* Small (Mobile First) */
+    --fs-h1: 25px; --lh-h1: 30px;
+    --fs-h2: 22px; --lh-h2: 22px;
+    --fs-h3: 17px; --lh-h3: 22px;
+    --fs-h4: 14px; --lh-h4: 19px;
+    --fs-h5: 12px; --lh-h5: 16px;
+    --fs-h6: 10px; --lh-h6: 14px;
+    --fs-p: 10px; --lh-p: 12px;
+    --fs-quote: 10px; --lh-quote: 12px;
+    --fs-lead: 14px; --lh-lead: 22px;
+    --fs-large: 12px; --lh-large: 18px;
+    --fs-small: 10px; --lh-small: 10px;
+    --fs-subtle: 10px; --lh-subtle: 14px;
+    --fs-strong: 10px; --lh-strong: 12px;
+    --fs-label: 10px; --lh-label: 12px;
+    --fs-title: 32px; --lh-title: 36px;
+  }
+
+  /* Medium >= 768px */
+  @media (min-width: 768px) {
+    :root {
+      --fs-h1: 30px; --lh-h1: 36px;
+      --fs-h2: 25px; --lh-h2: 28px;
+      --fs-h3: 20px; --lh-h3: 25px;
+      --fs-h4: 15px; --lh-h4: 22px;
+      --fs-h5: 14px; --lh-h5: 20px;
+      --fs-h6: 12px; --lh-h6: 18px;
+      --fs-p: 12px; --lh-p: 18px;
+      --fs-quote: 12px; --lh-quote: 18px;
+      --fs-lead: 16px; --lh-lead: 24px;
+      --fs-large: 14px; --lh-large: 22px;
+      --fs-small: 10px; --lh-small: 10px;
+      --fs-subtle: 12px; --lh-subtle: 18px;
+      --fs-strong: 12px; --lh-strong: 18px;
+      --fs-label: 12px; --lh-label: 16px;
+      --fs-title: 40px; --lh-title: 44px;
+    }
+  }
+
+  /* Large >= 1024px */
+  @media (min-width: 1024px) {
+    :root {
+      --fs-h1: 36px; --lh-h1: 44px;
+      --fs-h2: 28px; --lh-h2: 30px;
+      --fs-h3: 22px; --lh-h3: 28px;
+      --fs-h4: 18px; --lh-h4: 24px;
+      --fs-h5: 15px; --lh-h5: 22px;
+      --fs-h6: 13px; --lh-h6: 18px;
+      --fs-p: 15px; --lh-p: 22px;
+      --fs-quote: 15px; --lh-quote: 22px;
+      --fs-lead: 18px; --lh-lead: 26px;
+      --fs-large: 16px; --lh-large: 24px;
+      --fs-small: 13px; --lh-small: 13px;
+      --fs-subtle: 13px; --lh-subtle: 18px;
+      --fs-strong: 15px; --lh-strong: 22px;
+      --fs-label: 13px; --lh-label: 18px;
+      --fs-title: 48px; --lh-title: 52px;
+    }
+  }
+
+  /* Extra Large >= 1280px */
+  @media (min-width: 1280px) {
+    :root {
+      --fs-h1: 48px; --lh-h1: 100px;
+      --fs-h2: 30px; --lh-h2: 35px;
+      --fs-h3: 24px; --lh-h3: 32px;
+      --fs-h4: 20px; --lh-h4: 28px;
+      --fs-h5: 16px; --lh-h5: 24px;
+      --fs-h6: 14px; --lh-h6: 20px;
+      --fs-p: 16px; --lh-p: 24px;
+      --fs-quote: 16px; --lh-quote: 24px;
+      --fs-lead: 20px; --lh-lead: 28px;
+      --fs-large: 18px; --lh-large: 28px;
+      --fs-small: 14px; --lh-small: 14px;
+      --fs-subtle: 14px; --lh-subtle: 20px;
+      --fs-strong: 16px; --lh-strong: 24px;
+      --fs-label: 14px; --lh-label: 20px;
+      --fs-title: 60px; --lh-title: 64px;
+    }
+  }
+}
+
+@keyframes caral-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-slide-up {
+  from {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-caral-spin {
+  animation: caral-spin 1s linear infinite;
+}
+
+.animate-draw {
+  animation: draw 0.6s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scale-up 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-modal-slide-up {
+  animation: modal-slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawer-slide-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-drawer-slide-right {
+  animation: drawer-slide-right 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
