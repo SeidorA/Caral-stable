@@ -82,7 +82,7 @@ export const NavbarHorizontal: React.FC<NavbarHorizontalProps> = ({
 
           <div className="flex items-center gap-3">
             <div className="bg-neutral-400 p-1.5 rounded-lg flex items-center justify-center shadow-inner">
-              <Brand name={brandName} size={28} />
+              <Brand name={brandName as any} size={28} />
             </div>
             <h3 className="font-poppins font-semibold text-h3 text-white tracking-tight">
               {title}
@@ -120,7 +120,7 @@ export const NavbarHorizontal: React.FC<NavbarHorizontalProps> = ({
               <CaralIcon
                 name={isCollapsed ? 'chevronDown' : 'chevronUp'}
                 size="s"
-                className="transition-transform duration-300"
+                {...({ className: "transition-transform duration-300" } as any)}
               />
             </button>
           )}

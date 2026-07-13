@@ -112,11 +112,11 @@ export function Table<T extends { id?: string | number }>({
                     {column.sortable && (
                       <div className="flex flex-col text-neutral-800">
                         {sortConfig.key === column.key && sortConfig.direction === 'asc' ? (
-                          <CaralIcon name="chevronUp" size={14} className="text-seidor-main" />
+                          <CaralIcon name="chevronUp" size={14} color="var(--color-seidor-main)" />
                         ) : sortConfig.key === column.key && sortConfig.direction === 'desc' ? (
-                          <CaralIcon name="chevronDown" size={14} className="text-seidor-main" />
+                          <CaralIcon name="chevronDown" size={14} color="var(--color-seidor-main)" />
                         ) : (
-                          <CaralIcon name="chevronDown" size={14} className="opacity-20" />
+                          <CaralIcon name="chevronDown" size={14} color="rgba(36, 37, 40, 0.2)" />
                         )}
                       </div>
                     )}

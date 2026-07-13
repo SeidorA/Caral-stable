@@ -39,4 +39,10 @@ export type { NavbarVerticalProps, SidebarItem } from './components/NavbarVertic
 export { Accordion } from './components/Accordion';
 export type { AccordionProps } from './components/Accordion';
 
+export { TextInput } from './components/TextInput';
+export type { TextInputProps } from './components/TextInput';
+
+export { Timeline } from './components/Timeline';
+export type { TimelineProps } from './components/Timeline';
+
 export { LoginScreen } from './screens/LoginScreen';

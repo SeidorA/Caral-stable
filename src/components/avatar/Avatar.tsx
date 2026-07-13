@@ -20,13 +20,13 @@ type AvatarProps = {
    * - "Image" → shows a background image.
    */
   property1?:
-    | "Default"
-    | "info"
-    | "Aprove"
-    | "Danger"
-    | "Warning"
-    | "gray"
-    | "Image";
+  | "Default"
+  | "info"
+  | "Aprove"
+  | "Danger"
+  | "Warning"
+  | "gray"
+  | "Image";
   /**
    * Size of the avatar. "lg" → 60px, "md" → 44px, "sm" → 24px.
    */
@@ -91,13 +91,12 @@ export default function Avatar({
     <div className={className ? `${containerClasses} ${className}` : containerClasses}>
       {isTextMode && (
         <p
-          className={`not-italic relative shrink-0 text-neutral-100 whitespace-nowrap font-bold ${
-            size === 'lg'
+          className={`not-italic relative shrink-0 text-neutral-100 whitespace-nowrap font-bold ${size === 'lg'
               ? 'leading-[24px] text-[24px]'
               : size === 'sm'
-              ? 'leading-[var(--height/p,1px)] text-[10px]'
-              : 'leading-[var(--height/p,24px)] text-[length:var(--size/p,16px)]'
-          }`}
+                ? 'leading-[var(--height-p,1px)] text-[10px]'
+                : 'leading-[var(--height-p,24px)] text-[length:var(--size-p,16px)]'
+            }`}
         >
           {text?.substring(0, 2).toUpperCase() || ''}
         </p>

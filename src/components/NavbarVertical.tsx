@@ -64,8 +64,8 @@ export const NavbarVertical: React.FC<NavbarVerticalProps> = ({
     >
       {/* Header: Logo + Title */}
       <div className="flex items-center gap-3 p-5 h-[80px]">
-        <div className="bg-neutral-100 p-1.5 rounded-lg flex items-center justify-center shrink-0">
-          <Brand name={brandName} size={28} />
+        <div className="bg-neutral-400 p-1.5 rounded-lg flex items-center justify-center shrink-0">
+          <Brand name={brandName as any} size={28} />
         </div>
         {!isCollapsed && (
           <h3 className="font-poppins font-semibold text-h3  tracking-tight truncate text-neutral-900">

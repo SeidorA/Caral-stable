@@ -7,6 +7,7 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
-  external: ['react', 'react-dom'], // No empaques React adentro (las apps ya lo tienen)
-  injectStyle: true // Inyecta el CSS compilado de Tailwind
+  external: ['react', 'react-dom'],
+  injectStyle: false,
+  minify: true,
 });
