@@ -45,4 +45,7 @@ export type { TextInputProps } from './components/TextInput';
 export { Timeline } from './components/Timeline';
 export type { TimelineProps } from './components/Timeline';
 
+export { SemiCircleProgress } from './components/SemiCircleProgress';
+export type { SemiCircleProgressProps } from './components/SemiCircleProgress';
+
 export { LoginScreen } from './screens/LoginScreen';

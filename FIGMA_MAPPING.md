@@ -25,6 +25,7 @@ This document maps the UI components defined in the Figma design library to thei
 | **Text Input / Field** | `TextInput` | `src/components/TextInput.tsx` |
 | **Timeline** | `Timeline` | `src/components/Timeline.tsx` |
 | **Toggle / Switch** | `Toggle` | `src/components/Toggle.tsx` |
+| **Half Pie Chart / Radial Progress** | `SemiCircleProgress` | `src/components/SemiCircleProgress.tsx` |
 
 ## Design Tokens & Foundations
 
