@@ -48,4 +48,7 @@ export type { TimelineProps } from './components/Timeline';
 export { SemiCircleProgress } from './components/SemiCircleProgress';
 export type { SemiCircleProgressProps } from './components/SemiCircleProgress';
 
+export { RadialProgress } from './components/RadialProgress';
+export type { RadialProgressProps } from './components/RadialProgress';
+
 export { LoginScreen } from './screens/LoginScreen';
