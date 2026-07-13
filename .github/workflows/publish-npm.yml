@@ -1,0 +1,65 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - main
+      - master # En caso de que uses master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Necesario para leer los mensajes de los commits anteriores
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version and publish
+        id: bump
+        run: |
+          # Obtener el mensaje del último commit
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MSG"
+          
+          # Verificar si es un feat o fix
+          BUMP_TYPE=""
+          if [[ "$COMMIT_MSG" == *"feat:"* ]] || [[ "$COMMIT_MSG" == *"feat("* ]]; then
+            BUMP_TYPE="minor"
+            echo "Detected 'feat' in commit message. Bumping minor version."
+          elif [[ "$COMMIT_MSG" == *"fix:"* ]] || [[ "$COMMIT_MSG" == *"fix("* ]]; then
+            BUMP_TYPE="patch"
+            echo "Detected 'fix' in commit message. Bumping patch version."
+          else
+            echo "No 'feat' or 'fix' detected in commit message. Skipping NPM publish."
+            exit 0
+          fi
+          
+          # Actualizar versión
+          npm version $BUMP_TYPE -m "chore(release): %s [skip ci]"
+          
+          # Subir cambios a GitHub (commit de la versión y el tag)
+          git push --follow-tags
+          
+          # Publicar en NPM
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
