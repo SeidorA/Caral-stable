@@ -28,7 +28,7 @@ const variantStyles: Record<NonNullable<TextInputProps['variant']>, string> = {
   light: 'border-neutral-300 focus:border-seidor-main focus:ring-seidor-main/20',
 };
 
-export function TextInput({
+export const TextInput = React.forwardRef<HTMLInputElement | HTMLTextAreaElement, TextInputProps>(({
   label,
   helperText,
   requiredMessage,
@@ -43,7 +43,7 @@ export function TextInput({
   value,
   onChange,
   ...props
-}: TextInputProps) {
+}, ref) => {
   const hasIcon = Boolean(iconName);
   const inputClasses = [
     'block w-full rounded-lg bg-white dark:bg-neutral-400 border px-3 py-2 text-sm text-neutral-900 dark:text-neutral-100 transition-all duration-200 outline-none',
@@ -83,6 +83,7 @@ export function TextInput({
 
         {multiline ? (
           <textarea
+            ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
             id={fieldId}
             className={inputClasses}
             rows={rows}
@@ -93,6 +94,7 @@ export function TextInput({
           />
         ) : (
           <input
+            ref={ref as React.ForwardedRef<HTMLInputElement>}
             id={fieldId}
             type="text"
             className={inputClasses}
@@ -116,4 +118,6 @@ export function TextInput({
       
     </div>
   );
-}
+});
+
+TextInput.displayName = 'TextInput';
