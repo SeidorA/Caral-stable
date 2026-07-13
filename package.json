@@ -21,7 +21,7 @@
     "dev": "tsup --watch",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_b5fb9586ab45461"
+    "chromatic": "chromatic"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
